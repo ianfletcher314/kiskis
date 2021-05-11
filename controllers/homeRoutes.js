@@ -57,11 +57,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
 //post and put for secret
 router.get('/newsecret',withAuth, async (req, res) => {
     try {
-        // if (req.session.logged_in) {
-        //     res.redirect('/dashboard');
-        //     return;
-        // }
-        res.render('newsecret');
+
+        res.render('newSecret');
     } catch (err) {
         res.status(500).json(err);
     }
