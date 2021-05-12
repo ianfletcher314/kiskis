@@ -52,10 +52,6 @@ try {
 });
 
 
-
-
-
-
 //register page will appear when click on signup
 router.get('/signup', async (req, res) => {
   try {
@@ -66,7 +62,7 @@ router.get('/signup', async (req, res) => {
 });
 
 //user dashboard will view list of secret on left panel and view selected secret body on right page, login history button
-router.get('/dashboard', withAuth, async (req, res) => {
+router.get('/dashboard', async (req, res) => {
     try {
       // Find the logged in user based on the session ID
       const userData = await User.findByPk(req.session.user_id, {

@@ -1,4 +1,13 @@
 <h2>Dashboard</h2> 
 <button class="no-button" id="logout">logout</button>
 
+<h3>Welcome {{name}}</h3>
+{{#each secrets as |secret|}}
+  <p>{{secret.title}}</p>
+  <p>{{secret.body}}</p>
+
+  <h4><a href="/secret/{{secret.id}}">{{secret.title}}</a></h4>
+
+{{/each}}
+
   <script src="/js/logout.js"></script>
