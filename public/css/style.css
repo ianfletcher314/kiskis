@@ -1,0 +1,25 @@
+* {
+    border: 1px dashed red;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+}
+.pad-1 {
+    padding-left: 2em;
+    padding-top: 1em;
+}
+
+.caveat-bold {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+}
+.caveat {
+    font-family: 'Caveat', cursive;
+}
+#signUp-btn {
+    background-color: #ff80ab;
+}
+#signIn-btn {
+    background-color: #ff80ab;
+}
