@@ -1,6 +1,9 @@
-* {
-    border: 1px dashed red;
+:root {
+    --pinkaccent: #ff80ab;
 }
+/* * {
+    border: 1px dashed red;
+} */
 body {
     height: 100vh;
     width: 100vw;
@@ -18,8 +21,8 @@ body {
     font-family: 'Caveat', cursive;
 }
 #signUp-btn {
-    background-color: #ff80ab;
+    background-color:  var(--pinkaccent);
 }
 #signIn-btn {
-    background-color: #ff80ab;
+    background-color: var(--pinkaccent);
 }
