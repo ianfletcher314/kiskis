@@ -13,10 +13,10 @@
 </head>
 
 <body class="red lighten-4">
-
+    {{!-- Nav Bar --}}
     <nav class="z-depth-0 red lighten-4 pad-1">
         <div class="nav-wrapper red lighten-4">
-          <a href="#" class="brand-logo caveat-bold grey-text text-darken-3">kiskis</a>
+          <a href="/" class="brand-logo caveat-bold grey-text text-darken-3">kiskis</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down caveat grey-text text-darken-3">
             <li><a class="btn-flat caveat grey-text text-darken-3" href="#" id="newSecret-button">new secret</a></li>
             <li><a class="btn-flat caveat grey-text text-darken-3"  href="#" id="loginHistory-button">login history</a></li>
@@ -24,8 +24,8 @@
           </ul>
         </div>
     </nav>
-    
-    <div class="container center">
+    {{!-- Body --}}
+    <div class="container" id="main-content">
         {{{body}}}
     </div>
 
