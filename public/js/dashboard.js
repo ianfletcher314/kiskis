@@ -75,4 +75,3 @@ if (!!secretForm) {
   secretForm.addEventListener('submit', newFormHandler)
 }
 
-
