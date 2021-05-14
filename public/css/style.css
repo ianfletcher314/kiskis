@@ -1,5 +1,6 @@
 :root {
     --pinkaccent: #ff80ab;
+    --darkgrey: rgb(53, 53, 53);
 }
 /* * {
     border: 1px dashed red;
@@ -7,6 +8,9 @@
 body {
     height: 100vh;
     width: 100vw;
+}
+h3 {
+    color: var(--darkgrey);
 }
 .pad-1 {
     padding-left: 2em;

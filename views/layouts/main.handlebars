@@ -14,16 +14,22 @@
 
 <body class="red lighten-4">
     {{!-- Nav Bar --}}
-    <nav class="z-depth-0 red lighten-4 pad-1">
+    <nav class="z-depth-0 red lighten-4">
         <div class="nav-wrapper red lighten-4">
-          <a href="/" class="brand-logo caveat-bold grey-text text-darken-3">kiskis</a>
+          <a href="/" class="brand-logo caveat-bold grey-text text-darken-3"> &nbsp kiskis</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down caveat grey-text text-darken-3">
-            <li><a class="btn-flat caveat grey-text text-darken-3" href="#" id="newSecret-button">new secret</a></li>
+            <li><a class="btn-flat caveat grey-text text-darken-3" href="./newSecret" id="newSecret-button">new secret</a></li>
             <li><a class="btn-flat caveat grey-text text-darken-3"  href="#" id="loginHistory-button">login history</a></li>
             <li><a class="btn-flat caveat grey-text text-darken-3"  href="#" id="logout-button">logout</a></li>
           </ul>
         </div>
     </nav>
+          <ul class="brand-logo center hide-on-large-only show-on-medium-and-down caveat grey-text text-darken-3">
+            <li><a class="caveat grey-text text-darken-3" href="./newSecret" id="newSecret-button">new secret</a></li>
+            <li><a class="caveat grey-text text-darken-3"  href="#" id="loginHistory-button">login history</a></li>
+            <li><a class="caveat grey-text text-darken-3"  href="#" id="logout-button">logout</a></li>
+          </ul>
+    
     {{!-- Body --}}
     <div class="container" id="main-content">
         {{{body}}}
