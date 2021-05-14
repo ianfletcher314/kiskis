@@ -21,22 +21,6 @@ const newFormHandler = async (event) => {
   }
 };
 
-const editButtonHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
-
-    const response = await fetch(`/api/secrets/${id}`, {
-      method: 'PUT',
-    });
-
-    if (response.ok) {
-      document.location.replace('/dashboard');
-    } else {
-      alert('Failed to edit secret');
-    }
-  }
-};
-
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
@@ -54,21 +38,15 @@ const delButtonHandler = async (event) => {
   }
 };
 
-document
-  .querySelectorAll('.delete-secret')
+
+//delete secret
+document.querySelectorAll('.delete-secret')
   .forEach((element) => {
     element.addEventListener('click', delButtonHandler);
   })
 
 
-  document
-  .querySelectorAll('.edit-secret')
-  .forEach((element) => {
-    element.addEventListener('click', editButtonHandler);
-  })
-
-
-
+//create secret
 const secretForm = document
   .querySelector('.new-secret-form')
 if (!!secretForm) {
