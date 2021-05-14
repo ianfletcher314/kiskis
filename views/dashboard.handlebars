@@ -5,7 +5,31 @@
 <h3>Welcome {{name}}</h3>
 {{#each secrets as |secret|}}
 
-<a href="/dashboard/edit/{{id}}" class="btn btn-sm btn-danger blue" style="margin: 1rem;">{{secret.title}}</a><br>
+
+
+      <div class="col s12 m6">
+        <!-- CARD WITH TITLE -->
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">{{secret.title}}</span>
+            <p>{{secret.body}}</p>
+          </div>
+          <!-- ADD LINKS -->
+          <div class="card-action">
+            <a href="/dashboard/edit/{{id}}">Edit</a>
+            <a href="#" class="delete-secret" data-id="{{secret.id}}">Delete</a>
+ 
+
+            {{!-- <a href="/dashboard/edit/{{id}}" class="btn btn-sm btn-danger" style="margin: 1rem;">Edit</a><br>
+            <a href="/dashboard/edit/{{id}}" class="btn btn-sm btn-danger" style="margin: 1rem;">Delete</a><br> --}}
+          </div>
+        </div>
+      </div>
+
+
+
+
+{{!-- <a href="/dashboard/edit/{{id}}" class="btn btn-sm btn-danger blue" style="margin: 1rem;">{{secret.title}}</a><br> --}}
   {{!-- <p>{{secret.title}}</p>
   <p>{{secret.body}}</p>
 
