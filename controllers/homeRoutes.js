@@ -80,6 +80,40 @@ router.get('/dashboard', async (req, res) => {
     }
   });
 
+
+router.get('/dashboard/edit/:id', withAuth ,async (req, res) => {
+    try {
+        const secretData = await Secret.findOne({ where: {id: req.params.id},
+            attributes: [
+                'id', 
+                'title',
+                'body',
+            ],
+            include: [
+            {
+                model: User,
+                attributes: ['name']
+            }]
+        }) 
+        const secretItem = secretData.get({ plain: true});
+        console.log(secretItem)
+        res.render('editSecret', {
+            ...secretItem,
+            logged_in: true,
+        });
+
+
+    } catch (err) {
+        res.status(500).json(err);     
+    }
+})
+
+
+
+
+
+
+
 //post and put for secret
 router.get('/newsecret',withAuth, async (req, res) => {
     try {

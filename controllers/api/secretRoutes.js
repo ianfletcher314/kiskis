@@ -38,7 +38,11 @@ router.get('/:id', async (req, res) => {
           user_id: req.session.user_id,
         },
       });
-    
+      
+      if (!secretData) {
+        res.status(404).json({ message: 'No secret found with this id!' });
+        return;
+      }
       res.status(200).json(secretData);
     } catch (err) {
       res.status(500).json(err);
