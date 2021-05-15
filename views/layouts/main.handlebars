@@ -22,14 +22,14 @@
           <ul id="nav-mobile" class="right hide-on-med-and-down caveat grey-text text-darken-3">
             <li><a class="btn-flat caveat grey-text text-darken-3" href="./newSecret" id="newSecret-button">new secret</a></li>
             {{!-- <li><a class="btn-flat caveat grey-text text-darken-3"  href="#" id="loginHistory-button">login history</a></li> --}}
-            <li><a class="btn-flat caveat grey-text text-darken-3"  href="#" id="logout-button">logout</a></li>
+            <li><a class="btn-flat caveat grey-text text-darken-3 logout-button"  href="#" id="logout-button">logout</a></li>
           </ul>
         </div>
 
           <ul class="brand-logo center hide-on-large-only show-on-medium-and-down caveat grey-text text-darken-3">
             <li><a class="caveat grey-text text-darken-3" href="./newSecret" id="newSecret-button">new secret</a></li>
             {{!-- <li><a class="caveat grey-text text-darken-3"  href="#" id="loginHistory-button">login history</a></li> --}}
-            <li><a class="caveat grey-text text-darken-3"  href="#" id="logout-button">logout</a></li>
+            <li><a class="caveat grey-text text-darken-3 logout-button"  href="#" id="logout-button-s">logout</a></li>
           </ul>
        {{else}}
     <ul id="nav-mobile" class="right hide-on-med-and-down caveat grey-text text-darken-3">
@@ -43,9 +43,10 @@
         {{{body}}}
 
     </div>
-
-</body>
+   {{#if logged_in}}
   <script src="/js/logout.js"></script>
+   {{/if}}
+</body>
 
 </html>
 
