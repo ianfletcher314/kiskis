@@ -65,6 +65,7 @@ const cardButtonHandler = async (event) => {
     if (response.ok) {
       const secretData = await response.json()
       console.log(secretData);
+      document.querySelector('#secret-card').classList.remove('hide')
       document.querySelector('#secret-title').innerHTML = secretData.title
       document.querySelector('.secret-body').innerHTML = secretData.body
       document.querySelector('#edit-button').href =  `/dashboard/edit/${secretData.id}`
