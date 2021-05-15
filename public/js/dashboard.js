@@ -21,6 +21,11 @@ const newSecretHandler = async (event) => {
   }
 };
 
+///
+
+
+
+
 //can move into edit URL
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
@@ -69,7 +74,7 @@ const cardButtonHandler = async (event) => {
       document.querySelector('#secret-title').innerHTML = secretData.title
       document.querySelector('.secret-body').innerHTML = secretData.body
       document.querySelector('#edit-button').href =  `/dashboard/edit/${secretData.id}`
-      document.querySelector('#delete-secret-button').dataset.id = secret.id
+      // document.querySelector('#delete-secret-button').dataset.id = secret.id
     } else {
       document.querySelector('.secret-body').innerHTML = 'An error happened';
     }

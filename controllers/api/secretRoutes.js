@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { Secret, User, LoginHistory } = require('../../models');
 const withAuth = require('../../utils/auth');
+const Cryptr = require('cryptr');
+const cryptr = new Cryptr('584684231dsdfv351sr815drg6d1f35sfb31232');
 
 router.get('/:id', async (req, res) => {
   // res.status(200).json({id: 7, title: "Test 7", body: "adgdfadfdadgag"})
@@ -33,7 +35,8 @@ router.get('/:id', async (req, res) => {
 
   router.put('/:id', withAuth, async (req, res) => {
     try {
-      const secretData = await Secret.update(req.body, {
+      const newRecord = {...req.body, body: await cryptr.encrypt(req.body.body)}
+      const secretData = await Secret.update(newRecord, {
         where: {
           id: req.params.id,
           user_id: req.session.user_id,
