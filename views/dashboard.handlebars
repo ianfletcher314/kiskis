@@ -18,20 +18,13 @@
 
 {{#if secrets.length}}
   <div class="col s12 m6 hide" id="secret-card">
-    <!-- CARD WITH TITLE -->
     <div class="card">
       <div class="card-content">
         <span class="card-title black-text" id="secret-title">{{secrets.[0].title}}</span>
         <p class="black-text secret-body">{{secrets.[0].body}}</p>
       </div>
-      <!-- ADD LINKS -->
       <div class="card-action">
         <a href="/dashboard/edit/1" class="blue-text" id="edit-button">Edit</a>
-        {{!-- TO DO: FIX & ENABLE THE FOLLOWING LINE --}}
-        {{!-- <a href="#" class="delete-secret blue-text" id="delete-secret-button" data-id="1">Delete</a> --}}
-
-        {{!-- <a href="/dashboard/edit/{{id}}" class="btn btn-sm btn-danger" style="margin: 1rem;">Edit</a><br>
-        <a href="/dashboard/edit/{{id}}" class="btn btn-sm btn-danger" style="margin: 1rem;">Delete</a><br> --}}
       </div>
     </div>
   </div>
