@@ -118,7 +118,9 @@ router.get('/dashboard/edit/:id', withAuth ,async (req, res) => {
 router.get('/newsecret',withAuth, async (req, res) => {
     try {
 
-        res.render('newSecret');
+        res.render('newSecret', {
+            logged_in: true,
+        });
     } catch (err) {
         res.status(500).json(err);
     }
