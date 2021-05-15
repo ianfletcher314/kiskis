@@ -3,9 +3,10 @@ const { Secret, User, LoginHistory } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/:id', async (req, res) => {
+  // res.status(200).json({id: 7, title: "Test 7", body: "adgdfadfdadgag"})
     try {
       const secretData = await Secret.findByPk(req.params.id, {
-        include: [{model: Secret}]
+        include: [{model: User}]
       });
       if (!secretData) {
         res.status(404).json({ message: 'No secrets found!' });

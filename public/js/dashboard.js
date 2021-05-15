@@ -1,4 +1,4 @@
-const newFormHandler = async (event) => {
+const newSecretHandler = async (event) => {
   event.preventDefault();
 
   const title = document.querySelector('#secret-title').value.trim();
@@ -21,7 +21,7 @@ const newFormHandler = async (event) => {
   }
 };
 
-
+//can move into edit URL
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -38,7 +38,6 @@ const delButtonHandler = async (event) => {
   }
 };
 
-
 //delete secret
 document.querySelectorAll('.delete-secret')
   .forEach((element) => {
@@ -50,5 +49,32 @@ document.querySelectorAll('.delete-secret')
 const secretForm = document
   .querySelector('.new-secret-form')
 if (!!secretForm) {
-  secretForm.addEventListener('submit', newFormHandler)
+  secretForm.addEventListener('submit', newSecretHandler)
 }
+
+const cardButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+
+    document.querySelector('.secret-body').innerHTML = 'loading...'
+    const response = await fetch(`/api/secrets/${id}`)
+    // .then(function (response) {
+    //   return response.json();
+    // })
+
+    if (response.ok) {
+      const secretData = await response.json()
+      console.log(secretData);
+      document.querySelector('#secret-title').innerHTML = secretData.title
+      document.querySelector('.secret-body').innerHTML = secretData.body
+      document.querySelector('#edit-button').href =  `/dashboard/edit/${secretData.id}`
+      document.querySelector('#delete-secret-button').dataset.id = secret.id
+    } else {
+      document.querySelector('.secret-body').innerHTML = 'An error happened';
+    }
+  }
+}
+
+document.querySelector('.secret-title-cards')
+ .addEventListener('click', cardButtonHandler);
+

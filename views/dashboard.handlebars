@@ -1,28 +1,44 @@
 <h3>Welcome {{name}}</h3>
-{{#each secrets as |secret|}}
-<div class="col s12 m6">
-  <!-- CARD WITH TITLE -->
-  <div class="card">
-    <div class="card-content">
-      <span class="grey-text card-title">{{secret.title}}</span>
-      <p class="grey-text">{{secret.body}}</p>
+
+<div class="row">
+  <div class="col m4 secret-title-cards">
+    <h6><b>Secrets</b></h6>
+    {{#each secrets as |secret|}}
+
+    {{!-- <a href="/dashboard/edit/{{id}}" class="btn btn-sm btn-danger blue"
+      style="margin: 1rem;">{{post.title}}</a><br> --}}
+    <div class='collection'>
+      {{!-- <a href="/dashboard/edit/{{id}}" class="collection-item">{{post.title}}</a> --}}
+      {{!-- <a href="/dashboard/edit/{{id}}" class="collection-item purple-text">{{post.title}}</a> --}}
+      {{!-- <a href="/dashboard/post/{{id}}" class="collection-item purple-text">{{post.title}}</a> --}}
+      <a href="#" class="collection-item purple-text get-post" data-id="{{secret.id}}">{{secret.title}}</a>
     </div>
-    <!-- ADD LINKS -->
-    <div class="card-action">
-      <a href="/dashboard/edit/{{id}}">Edit</a>
-      <a href="#" class="delete-secret" data-id="{{secret.id}}">Delete</a>
-      {{!-- <a href="/dashboard/edit/{{id}}" class="btn btn-sm btn-danger" style="margin: 1rem;">Edit</a><br>
-      <a href="/dashboard/edit/{{id}}" class="btn btn-sm btn-danger" style="margin: 1rem;">Delete</a><br> --}}
+    {{/each}}
+  </div>
+
+{{#if secrets.length}}
+{{#if secrets.[0].id}}
+  <div class="col s12 m6">
+    <!-- CARD WITH TITLE -->
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title black-text" id="secret-title">{{secrets.[0].title}}</span>
+        <p class="black-text secret-body">{{secrets.[0].body}}</p>
+      </div>
+      <!-- ADD LINKS -->
+      <div class="card-action">
+        <a href="/dashboard/edit/1" class="blue-text" id="edit-button">Edit</a>
+        {{!-- TO DO: FIX & ENABLE THE FOLLOWING LINE --}}
+        {{!-- <a href="#" class="delete-secret blue-text" id="delete-secret-button" data-id="1">Delete</a> --}}
+
+        {{!-- <a href="/dashboard/edit/{{id}}" class="btn btn-sm btn-danger" style="margin: 1rem;">Edit</a><br>
+        <a href="/dashboard/edit/{{id}}" class="btn btn-sm btn-danger" style="margin: 1rem;">Delete</a><br> --}}
+      </div>
     </div>
   </div>
-</div>
-{{!-- <a href="/dashboard/edit/{{id}}" class="btn btn-sm btn-danger blue" style="margin: 1rem;">{{secret.title}}</a><br>
---}}
-{{!-- <p>{{secret.title}}</p>
-<p>{{secret.body}}</p>
-<h4><a href="/secret/{{secret.id}}">{{secret.title}}</a></h4>
-<button class="edit-secret" data-id="{{secret.id}}">edit</button>
-<button class="delete-secret" data-id="{{secret.id}}">delete</button> --}}
-{{/each}}
-<script src="/js/logout.js"></script>
-<script src="/js/dashboard.js"></script>
+{{/if}}
+{{/if}}
+
+  
+
+  <script src="/js/dashboard.js"></script>
