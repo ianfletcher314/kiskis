@@ -7,7 +7,7 @@
  4. [Application](#Application)
  5. [License](#License)
 ## Description
-This application was designed to be a vault for any sensitive information you wish to keep safe. The information is saved as a "secret" that is encrpyted through cryptr and stored in a MySQL database. To learn more about our application please see our [Walkthrough Video]()
+This application was designed to be a vault for any sensitive information you wish to keep safe. The information is saved as a "secret" that is encrpyted through cryptr and stored in a MySQL database. To learn more about our application please see our [Walkthrough Video](https://drive.google.com/file/d/16MVKKv06JtErOb1wx_g1021cbYiUrjod/view)
 
 Technologies Used: 
 * Java Script 
